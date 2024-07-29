@@ -1,0 +1,148 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            background-color: #eee;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-left: 5px solid #333;
+        }
+        .projects .project {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Personal Portfolio</h1>
+    </header>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <main>
+        <section id="about">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <p>Hello! I am Lathika sri.s, a BCA -data science based in mathur. I specialize in data analytics.</p>
+        </section>
+        <section id="skills">
+            <div class="section-title">
+                <h2>Skills</h2>
+            </div>
+            <ul>
+                <li>best in coding</li>
+                <li>easy attraction with people</li>
+                <li>communication</li>
+            </ul>
+        </section>
+        <section id="projects">
+            <div class="section-title">
+                <h2>Projects</h2>
+            </div>
+            <div class="projects">
+                <div class="project">
+                    <h3>Project Title 1</h3>
+                    <p> I have completed in the internet of things .The election voting machine in iot project. </p>
+                </div>
+                <div class="project">
+                    <h3>Project Title 2</h3>
+                    <p>I have completed in the big data analytics. The fraud detection using the credit card is my project.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="section-title">
+                <h2>Contact</h2>
+            </div>
+            <form class="contact-form" onsubmit="sendContactForm(event)">
+                <input type="text" id="name" placeholder="S LATHIKA SRI" required>
+                <input type="email" id="email" placeholder="lathikasri44@gamil.com" required>
+                <textarea id="message" placeholder="i have good knowledge about the IT sector." rows="4" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        function sendContactForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                alert(`Thank you, ${name}! Your message has been sent.`);
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('message').value = '';
+            } else {
+                alert('Please fill in all fields.');
+            }
+        }
+    </script>
+</body>
+</html>
